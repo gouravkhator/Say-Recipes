@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Recipes.css';
+import keys from '../config/keys';
 import Search from './Search';
 
 function Recipes() {
@@ -11,7 +12,7 @@ function Recipes() {
     const [mainSearched, setMainSearched] = useState(searchedValue);
     const [veg, setVeg] = useState(true);
     const [recipeArr, setRecipeArr] = useState([]);
-    const app_id = "abf008f3", app_key = "0aecda60dcf1b8a39109d3afa689f6ff";
+    const app_id = keys.app_id, app_key = keys.app_key;
     let url = `https://api.edamam.com/search?q=${mainSearched}&app_id=${app_id}&app_key=${app_key}`;
     useEffect(() => {
         getData();

@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+/src/config/keys_dev.js
 .pnp.js
 
 # testing
