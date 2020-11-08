@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Recipes.css';
-import keys from '../config/keys';
 import Search from './Search';
 
 function Recipes() {
@@ -12,7 +11,9 @@ function Recipes() {
     const [mainSearched, setMainSearched] = useState(searchedValue);
     const [veg, setVeg] = useState(true);
     const [recipeArr, setRecipeArr] = useState([]);
-    const app_id = keys.app_id, app_key = keys.app_key;
+
+    const app_id = process.env.REACT_APP_EDAMAM_APP_ID, app_key = process.env.REACT_APP_EDAMAM_APP_KEY;
+
     let url = `https://api.edamam.com/search?q=${mainSearched}&app_id=${app_id}&app_key=${app_key}`;
     useEffect(() => {
         getData();
