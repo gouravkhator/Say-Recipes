@@ -4,6 +4,26 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Recipes.css';
 import Search from './Search';
 
+const getData = async (url, veg, setRecipeArr) => {
+    const res = await fetch(url);
+    const data = await res.json();
+    // console.log(data);
+    let temp;
+    if (veg === true) {
+        temp = data.hits.filter((value) => {
+            const healthLabels = [...value.recipe.healthLabels];
+            return healthLabels.findIndex((value1) => value1 === "Vegetarian") !== -1;
+        });
+    }
+    else {
+        temp = data.hits.filter((value) => {
+            const healthLabels = [...value.recipe.healthLabels];
+            return healthLabels.findIndex((value1) => value1 === "Vegetarian") === -1;
+        });
+    }
+    setRecipeArr(temp);
+}
+
 function Recipes() {
     const dispatch = useDispatch();
     const savedSearch = useSelector(state => state.searched);
@@ -12,33 +32,14 @@ function Recipes() {
     const [veg, setVeg] = useState(true);
     const [recipeArr, setRecipeArr] = useState([]);
 
-    const app_id = process.env.REACT_APP_EDAMAM_APP_ID, app_key = process.env.REACT_APP_EDAMAM_APP_KEY;
-
-    let url = `https://api.edamam.com/search?q=${mainSearched}&app_id=${app_id}&app_key=${app_key}`;
     useEffect(() => {
-        getData();
+
+        const app_id = process.env.REACT_APP_EDAMAM_APP_ID, app_key = process.env.REACT_APP_EDAMAM_APP_KEY;
+        let url = `https://api.edamam.com/search?q=${mainSearched}&app_id=${app_id}&app_key=${app_key}`;
+        getData(url, veg, setRecipeArr);
+
     }, [mainSearched, veg]);
 
-
-    const getData = async () => {
-        const res = await fetch(url);
-        const data = await res.json();
-        // console.log(data);
-        let temp;
-        if (veg === true) {
-            temp = data.hits.filter((value) => {
-                const healthLabels = [...value.recipe.healthLabels];
-                return healthLabels.findIndex((value1) => value1 === "Vegetarian") !== -1;
-            });
-        }
-        else {
-            temp = data.hits.filter((value) => {
-                const healthLabels = [...value.recipe.healthLabels];
-                return healthLabels.findIndex((value1) => value1 === "Vegetarian") === -1;
-            });
-        }
-        setRecipeArr(temp);
-    }
 
     const searchFunction = (e) => {
         setSearchedValue(e.target.value);
