@@ -5,7 +5,7 @@ function Nav() {
     return (
         <div className="Nav">
             <div className="leftNav">
-                <span><a href="/">Gourav Recipes</a></span>
+                <span><a href="/">Say Recipes</a></span>
             </div>
             <div className="rightNav">
                 <ul>

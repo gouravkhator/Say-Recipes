@@ -1,13 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Recipes.css';
 import Search from './Search';
 
+const Items = lazy(() => import('./Items'));
+
+const renderLoader = () => {
+    return (
+        <div className="loading">
+            Loading..
+        </div>
+    );
+}
+
 const getData = async (url, veg, setRecipeArr) => {
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data);
+    console.log(data);
     let temp;
     if (veg === true) {
         temp = data.hits.filter((value) => {
@@ -62,20 +71,10 @@ function Recipes() {
         <div className="Recipes">
             <Search handleSearch={(e) => searchFunction(e)} handleVeg={(e) => handleVegEvent(e)}
                 checkedValue={veg} keyDown={(e) => handleKeyDown(e)} />
-            <ul className="recipeList">
-                {recipeArr.map(({ recipe }) => {
-                    return (
-                        <li key={recipe.label} className="recipeItem">
-                            <h2>{recipe.label}</h2>
-                            <Link to={"/ingredients/" + recipe.label} onClick={() => handleIngredientClick(recipe)}>
-                                <img src={recipe.image} alt="..." />
-                            </Link>
-                            <p>Calories : {recipe.calories.toFixed(2)}</p>
-                        </li>
-                    );
 
-                })}
-            </ul>
+            <Suspense fallback={renderLoader()}>
+                <Items recipeArr={recipeArr} handleIngredientClick={handleIngredientClick} />
+            </Suspense>
         </div>
     );
 

@@ -1,187 +1,270 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    overflow-x: hidden;
+.loading {
+  text-align: center;
+  width: 100%;
+  margin: 2vh auto;
+  font-size: 1.3rem;
 }
 
-.Search{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:10px;
+.Search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
 }
 
-.Search input[type="text"]{
-    margin:5px;
-    padding: 10px;
-    width:30vw;
-    font-size: 18px;
+.Search input[type="text"] {
+  margin: 5px;
+  padding: 10px;
+  width: 30vw;
+  font-size: 18px;
+  border: 1px solid #075F6C;
+  border-radius: 2px;
 }
 
-.Search button{
-    margin:5px;
-    padding: 10px;
-    width:80px;
-    font-size: 18px;
-    color: white;
-    border-radius: 20px;
-    outline: none;
-    cursor: pointer;
-    background: radial-gradient(chocolate,purple);
+.Search input[type="text"]:focus, .Search input[type="text"]:active {
+  border: 2px solid #032227;
 }
 
-.Search input[type="checkbox"]{
-    margin:5px;
-    zoom:2;
+.Search button {
+  margin: 5px;
+  padding: 10px;
+  width: 80px;
+  font-size: 18px;
+  color: white;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  background: radial-gradient(chocolate, purple);
 }
 
-.checkboxInput{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Search input[type="checkbox"] {
+  margin: 5px;
+  zoom: 2;
+}
+
+.checkboxInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /*Recipes*/
-.recipeList{
-    width:100vw;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+.recipeList {
+  width: 80vw;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 10px;
+  padding: 5px 10px;
+  margin: 0 auto;
 }
 
-.recipeItem{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin:10px;
-    padding: 10px;
-    text-align: center;
+.recipeItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 3px solid #033F4F;
+  font-size: larger;
+  cursor: pointer;
 }
 
-.recipeItem img{
-    margin:5px;
-    cursor: pointer;
+.recipeItem a, .recipeItem span, .recipeItem h3, .recipeItem p {
+  text-decoration: none;
+  color: darkcyan;
+}
+
+.recipeItem a:hover, .recipeItem a:focus, .recipeItem a:active, .recipeItem span:hover, .recipeItem span:focus, .recipeItem span:active, .recipeItem h3:hover, .recipeItem h3:focus, .recipeItem h3:active, .recipeItem p:hover, .recipeItem p:focus, .recipeItem p:active {
+  color: darkcyan;
+}
+
+.recipeItem .item-name {
+  width: 100%;
+  height: 20%;
+  max-height: 25px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.recipeItem img {
+  width: 200px;
+  height: 250px;
+  margin: 5px;
+  max-height: 70%;
 }
 
 /*Ingredients*/
-.IngredientPage{
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.IngredientPage {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.IngredientPage h2{
-    margin: 10px;
+.IngredientPage h2 {
+  margin: 10px;
+  font-size: 1.3rem;
 }
 
-.IngredientPage .image{
-    text-align: center;
-    height: 92vh;
-    width:45vw;
-    padding: 10px;
+.IngredientPage .image {
+  text-align: center;
+  padding: 10px;
 }
 
-.IngredientPage .list{
-    margin: 10px;
-    width: 45vw;
-    min-height: 100vh;
+.IngredientPage .image img {
+  width: 50%;
+  height: 50%;
+  border-radius: 20%;
+  margin-top: 10px;
+  border: 2px solid #032227;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.IngredientPage  ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+.IngredientPage .image img:hover, .IngredientPage .image img:focus {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 
-.ingredientItem{
-    margin: 10px;
-    padding: 10px;
-    border-left : 2px solid rgb(82, 2, 16);
+.IngredientPage .list {
+  margin: 10px;
+  width: 45vw;
+  min-height: auto;
+}
+
+.IngredientPage ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ingredientItem {
+  margin: 10px;
+  padding: 10px;
+  border-left: 2px solid #520210;
 }
 
 /*About and contact pages*/
-.container{
-    display: grid;
-    place-items: center;
-    margin: 2vw;
+.container {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin: 2vh 2vw;
 }
 
-.heading{
-    font-size: 2rem;
+.heading {
+  font-size: 1.5rem;
 }
 
-.contact ul{
-    list-style: none;
-    margin: 1.1rem 0.8rem;
-    font-size: 1.3rem;
+.contact ul {
+  list-style: none;
+  margin: 1.1rem 0.8rem;
+  font-size: 1.3rem;
 }
 
-.contact{
-    display: flex;
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.contact li{
-    border: 1px solid rgb(82, 2, 16);
-    border-radius: .5rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: rgb(255, 206, 213);
+.contact li {
+  border: 1px solid #520210;
+  border-radius: .5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #034251;
+  color: whitesmoke;
 }
 
-.about{
-    display: flex;
-    flex-direction: column;
-    margin: 2vw;
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2vw;
 }
 
-.about p{
-    font-size: 1.2rem;
-    margin-bottom: 1.1rem;
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
-@media(max-width:768px){
-    .Search input[type="text"]{
-        width:50vw;
-        font-size: 18px;
-    }
-    .IngredientPage{
-        display: inline-block;
-    }
-
-    .IngredientPage .image{
-        width:100vw;
-        height:auto;
-    }
-    .IngredientPage .list{
-        width:100vw;
-        height: auto;
-    }
-
-    .IngredientPage img{
-        width:100vw;
-        height:50vh;
-    }
+@media (max-width: 768px) {
+  .Search input[type="text"] {
+    width: 50vw;
+    font-size: 18px;
+  }
+  .IngredientPage {
+    display: inline-block;
+  }
+  .IngredientPage .image {
+    width: 100vw;
+    height: auto;
+  }
+  .IngredientPage .list {
+    width: 100vw;
+    height: auto;
+  }
+  .IngredientPage img {
+    width: 100vw;
+    height: 50vh;
+  }
 }
 
-@media(max-width: 500px){
-    /*about and contact pages*/
-    .heading{
-        font-size: 1.5rem;
-    }
-
-    .contact ul{
-        margin: 1.1rem 0.5rem;
-        font-size: 1.1rem;
-    }
-
-    .contact li{
-        border-radius: .2rem;
-        padding: 0.5rem;
-    }
-
+@media (max-width: 500px) {
+  /*about and contact pages*/
+  .heading {
+    font-size: 1.5rem;
+  }
+  .contact ul {
+    margin: 1.1rem 0.5rem;
+    font-size: 1.1rem;
+  }
+  .contact li {
+    border-radius: .2rem;
+    padding: 0.5rem;
+  }
 }
+/*# sourceMappingURL=Recipes.css.map */
