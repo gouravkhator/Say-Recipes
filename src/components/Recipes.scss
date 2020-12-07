@@ -5,6 +5,7 @@
     font-size: 1.3rem;
 }
 
+/*Search box*/
 .Search{
     display: flex;
     justify-content: center;
@@ -48,9 +49,10 @@
     align-items: center;
 }
 
-/*Recipes*/
+/*Recipe Items*/
 .recipeList{
-    width: 80vw;
+    width: 100%;
+    max-width: 1200px;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
@@ -71,6 +73,7 @@
     border: 3px solid #033F4F;
     font-size: larger;
     cursor: pointer;
+    box-shadow: 0px 3px 5px #033F4F;
 
     a, span, h3, p{
         text-decoration: none;
@@ -93,15 +96,16 @@
 }
 
 .recipeItem img{
-    width: 200px;
+    width: 250px;
     height: 250px;
     margin:5px;
     max-height: 70%;
+    border-radius: 10%;
 }
 
 /*Ingredients*/
 .IngredientPage{
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -114,8 +118,6 @@
 
 .IngredientPage .image{
     text-align: center;
-    // height: 92vh;
-    // width:45vw;
     padding: 10px;
 
     img{
@@ -124,6 +126,7 @@
         border-radius: 20%;
         margin-top: 10px;
         border: 2px solid #032227;
+        box-shadow: 0px 10px 10px #a7d6dd;
         transition: all 0.5s ease-in-out;
         
         &:hover, &:focus{
@@ -209,13 +212,19 @@
         height: auto;
     }
 
-    .IngredientPage img{
-        width:100vw;
-        height:50vh;
+    .IngredientPage .image img{
+        width: 300px;
+        height: 300px;
     }
 }
 
 @media(max-width: 500px){
+    /*Ingredient page*/
+    .IngredientPage .image img{
+        width: 200px;
+        height: 200px;
+    }
+
     /*about and contact pages*/
     .heading{
         font-size: 1.5rem;
@@ -231,4 +240,11 @@
         padding: 0.5rem;
     }
 
+}
+
+@media(max-width: 400px){
+    /*Recipe Items*/
+    .recipeList{
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    }
 }
