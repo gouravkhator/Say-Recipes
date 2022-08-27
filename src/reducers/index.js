@@ -1,17 +1,8 @@
-const initialState = {
-    currentRecipe: {},
-    searched: 'pasta',
-};
+import { combineReducers } from "redux";
+import globalReducer from "./global.reducer";
+import recipesReducer from "./recipes.reducer";
 
-const reducer = (state = initialState, action) => {
-    if (action.type === 'SET_RECIPE') {
-        return {
-            ...state,
-            currentRecipe: { ...action.currentRecipe },
-            searched: action.searched,
-        };
-    }
-    return { ...state };
-}
-
-export default reducer;
+export default combineReducers({
+  recipes: recipesReducer,
+  global: globalReducer,
+});
