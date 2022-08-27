@@ -14,7 +14,7 @@ function Search(props) {
       <div className="checkboxInput">
         <input
           type="checkbox"
-          onClick={props.handleVeg}
+          onChange={props.handleVeg}
           checked={props.checkedValue}
         />{" "}
         Veg

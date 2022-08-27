@@ -6,9 +6,9 @@ export default function Items({ recipeArr, handleIngredientClick }) {
     <>
       <ul className="recipeList">
         {recipeArr.length !== 0 &&
-          recipeArr.map(({ recipe }) => {
+          recipeArr.map(({ recipe }, index) => {
             return (
-              <li key={recipe.label} className="recipeItem">
+              <li key={recipe.label + "" + index} className="recipeItem">
                 <Link
                   to={"/ingredients/" + recipe.label}
                   onClick={() => handleIngredientClick(recipe)}

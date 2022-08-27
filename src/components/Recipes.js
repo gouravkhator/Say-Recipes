@@ -55,7 +55,7 @@ function Recipes() {
         dispatch(setError("Failed loading recipes' data"));
       }
     })();
-  }, [mainSearched, veg]);
+  }, [mainSearched, veg, dispatch]);
 
   const searchFunction = (e) => {
     setSearchedValue(e.target.value);
