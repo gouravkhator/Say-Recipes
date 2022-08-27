@@ -1,8 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Say Recipes
+
+Recipes, recipes, recipes!! Ingredients, calories and more!! This webapp says a lot about recipes..
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run netlify:dev`
+
+Runs `react-scripts start` but with netlify functions also served in our local environment.
 
 ### `npm start`
 
