@@ -1,7 +1,15 @@
 {
   "name": "say-recipes",
   "version": "0.1.0",
+  "description": "Say Recipes - Recipes that speak about itself.. Ingredients, calories and more",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "netlify:dev": "netlify dev"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "cors-anywhere": "^0.4.3",
@@ -12,22 +20,34 @@
     "react-scripts": "^3.1.1",
     "redux": "^4.0.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "netlify:dev": "netlify dev"
-  },
   "devDependencies": {
     "netlify-cli": "^11.5.0"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "engines": {
     "npm": ">=8.18.0",
     "node": ">=16.6.0"
+  },
+  "keywords": [
+    "recipes",
+    "edamam",
+    "recipes-api",
+    "ingredients",
+    "netlify",
+    "serverless",
+    "serverless-functions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gouravkhator/Say-Recipes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gouravkhator/Say-Recipes/issues"
+  },
+  "homepage": "https://github.com/gouravkhator/Say-Recipes#readme",
+  "author": "Gourav Khator",
+  "license": "Apache-2.0",
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

@@ -11,6 +11,7 @@ const renderLoader = () => {
 };
 
 const getData = async (searchedItem, veg, setRecipeArr) => {
+  // using netlify serverless function, with the query param passed as recipe_name
   const res = await fetch(
     "/.netlify/functions/fetch_recipe_data?recipe_name=" + searchedItem
   );
