@@ -8,9 +8,9 @@
 
 ## Prerequisites
 
-Make a `.env.local` file, similar to the contents of `.env.sample` file, in the root directory of the project, and paste the environment variables there.
+Make a `.env.local` file, with the similar contents as that of `.env.sample` file, in the root directory of the project, and paste the actual environment variables there.
 
-Then, run below:
+Then, run below command:
 
 ```sh
 npm install
@@ -26,6 +26,11 @@ In the project directory, you can run:
 - `npm run build`: Builds the webapp for production to the `build` folder.
 
 ## Notes for Developers
+
+- Don't add any `bugs`, `homepage`, or `repository` urls/fields in the `package.json`:
+
+  - When I had put those fields in the `package.json`, ReactJS thought to serve the static files like css and optimized build of js files from `https://<hostname>:<port>/<my-git-profile-username>/<repo-name>/<static-file-name>`, instead of the usual url: `https://<hostname>:<port>/<static-file-name>`, and this issue led to 404 not found of that static file..
+  - Have to check more why this was the case/issue. But for now, I don't need those fields mandatorily.
 
 - Before deploying to **netlify**, remember below points:
 

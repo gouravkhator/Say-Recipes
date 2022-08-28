@@ -36,16 +36,6 @@
     "serverless",
     "serverless-functions"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gouravkhator/Say-Recipes.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gouravkhator/Say-Recipes/issues"
-  },
-  "homepage": "https://github.com/gouravkhator/Say-Recipes#readme",
-  "author": "Gourav Khator",
-  "license": "Apache-2.0",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -60,5 +50,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "author": "Gourav Khator",
+  "license": "Apache-2.0"
 }
